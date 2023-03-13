@@ -2,13 +2,12 @@ const mongoose = require('mongoose');
 
 const destinationSchema= new mongoose.Schema({
     destination: {type: String, required: true},
-    date: {type: Date , required: true},
+    date: {type: String , required: true},
     isFeatured: {type: Boolean},
     hotels: {type: Number },
     flights: {type: Number },
     activities: {type: Number},
-    people: {type: String},
-    misc: {type: String},
+    misc: {type: Number},
     photo: {type: String}
 
 }

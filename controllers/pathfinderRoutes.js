@@ -18,18 +18,29 @@ const db = require('../models')
 
 // Index/HOME Route 
 router.get('/', function (req, res) { 
-    db.Destination.find({isFeatured: true})
-        .then( place => res.json(place))
+    db.Destinations.find({isFeatured: true})
+    .then (destinations =>{
+            res.render('destinationIndex', {
+                Destination: destinations
+            })
+    })
+    .catch(() => res.send("UH-OH, PAGE NOT FOUND"))
+        
 })
 
 
-// // Show Route 
-// router.get('/:id', function (req, res) { //<------- change to whatever destination is clicked, create multiple for each destination. Eg: /Greece, /Philippines
-//     db.Pet.findById(req.params.id)
-//         .then(pet => res.json(pet))
-//         .catch(() => res.send('404 Error: Page Not Found'))
-// })
+// SHOW ROUTE
+router.get('/:id', function (req, res) { 
+    db.Destinations.findById(req.params.id)
+        .then(destinations => {
+            res.render('destinationShow',{
+                Destination: destinations
+            })
+            })
+            .catch(() => res.send('UH-OH, PAGE NOT FOUND'))
+        })
 
+      
 
 /* Export these routes so that they are accessible in `server.js`
 --------------------------------------------------------------- */

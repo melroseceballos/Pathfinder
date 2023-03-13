@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/header.ejs', {title: 'Path Finder'}) %>
+    <link rel="stylesheet" href="/styles/destinationIndex.css">
+</head>
+
+<body>
+    <%- include('./partials/nav.ejs') %>
+
+    <main>
+        <section class="explore">
+            <h1>Where Would You Like To Go?</h1>
+            <ul class="destination-grid">
+                <% for (let destinations of Destination) { %>
+                <li>
+                    <figure>
+                        <img src="<%= destinations.photo %>">
+                        <figcaption>
+                            <h4 class="name"><%= destinations.destination %></h4>
+                        </figcaption>
+                    </figure>
+                </li>
+                <% } %>
+            </ul>
+        </section>
+    </main>
+
+    <%- include('./partials/footer.ejs') %>
+</body>
+
+</html>

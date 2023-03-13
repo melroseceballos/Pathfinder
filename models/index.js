@@ -11,6 +11,6 @@ const mongodburi = process.env.MONGODBURI;
 
 // ACCESING PET SCHEMA
 module.exports = {
-    Destination: require('./destinationSchema'),
+    Destinations: require('./destinationSchema'),
     seedDestination: require('./seed')
 }

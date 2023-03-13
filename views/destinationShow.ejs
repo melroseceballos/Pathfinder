@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/header.ejs', {title: 'Path Finder'}) %>
+    <link rel="stylesheet" href="/styles/destinationShow.css">
+</head>
+
+<body>
+    <%- include('./partials/nav.ejs') %>
+
+    <div>
+       
+        <h2 class="destination-details"><%= Destination.destination %></h2>
+        <section>
+            <p><strong>Date:</strong> <%= Destination.date %></p>
+            <p><strong>Hotels Cost:</strong> <%= Destination.hotels %></p>
+            <p><strong>Flight Cost:</strong> <%= Destination.flights%></p>
+            <p><strong>Activities Cost:</strong> <%= Destination.activities %></p>
+            <p><strong>Miscellaneous Cost:</strong> <%= Destination.misc %></p>
+            <img src="<%= Destination.photo %>">
+           
+        </section>
+    </div>
+
+    <%- include('./partials/footer.ejs') %>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+	<%# THIS WILL SERVE AS MY HOMEPAGE AND INDEX PAGE AT THE SAME TIME %>
+    <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/header.ejs', {title: 'Path Finder'}) %>
+    <link rel="stylesheet" href="/styles/home.css">
+</head>
+
+<body>
+    <%- include('./partials/nav.ejs') %>
+
+    <main>
+        <section class="pathfinder">
+            <h2>Where Would You Like To Explore?</h2>
+        </section>
+        <section class="featured-destinations">
+            <ul class="destination-grid">
+                <% for (let Destination of destination) { %>
+                <li>
+                    <figure>
+                        <a href="/pathfinderRoutes/<%= Destination.id %>" ><img src="<%= Destination.photo %>"></a>
+                    </figure>
+                    <figcaption>
+                        <div class="featured-info">
+                            <h3><%= Destination.destination %></h3>
+                            <p><%= Destination.date %></p>
+                        </div>
+                    </figcaption>
+                </li>
+                <% } %>
+            </ul>
+        </section>
+    </main>
+
+    <%- include('./partials/footer.ejs') %>
+</body>
+
+</html>

@@ -25,20 +25,28 @@ app.set('views', path.join(__dirname, 'views'));
 --------------------------------------------------------------- */
 app.use(express.static('public'))
 app.use(connectLiveReload());
-app.use('/pathfinderRoutes', destinationCtrl)
+
 
 
 /* Mount routes
 --------------------------------------------------------------- */
+
+// HOME/INDEX PAGE
 app.get('/', function (req, res) {
-    res.send('PathFinder')
+   db.Destinations.find({isFeatured: true})
+   .then(destination => {
+        res.render('home',{
+            destination: destination
+        })
+   })
 });
+
 // SEED 
 app.get('/seed', function(req,res){
-    db.Destination.deleteMany({})
+    db.Destinations.deleteMany({})
     .then(removedDestinations => {
         console.log(`Removed ${removedDestinations.deletedCount} destinations`)
-    db.Destination.insertMany(db.seedDestination)
+    db.Destinations.insertMany(db.seedDestination)
     .then(addedDestinations =>{
         console.log(`Added ${addedDestinations.length} destinations to be inserted`)
         res.json(addedDestinations)
@@ -46,7 +54,7 @@ app.get('/seed', function(req,res){
     })
 })
 
-
+app.use('/pathfinderRoutes', destinationCtrl)
 /* Tell the app to listen on the specified port
 --------------------------------------------------------------- */
 app.listen(process.env.PORT, function () {

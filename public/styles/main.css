@@ -1,0 +1,93 @@
+/* Reset styles for cross-browser consistency */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    background-color: white;
+    min-height: 100vh;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Header styles */
+.home{
+    color: white;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #354027;
+    padding: 1rem;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    color: white;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: white;
+}
+
+h1 a:hover {
+    text-decoration: none;
+    color: white
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    color: white;
+}
+
+nav li:not(:last-child) {
+    margin-right: 1rem;
+    color: white;
+   
+}
+
+nav a {
+    font-size: 1.2rem;
+    color: white;
+}
+
+/* Welcome Greeting */
+.pathfinder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f6f6f6;
+    height: 15vh;
+    font-weight: 700;
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #5e5a5a;
+    width: calc(100vw - 1rem);
+}
+
+footer * { 
+    color: #fff;
+}
+
+footer ul {
+    justify-content: center;
+}
