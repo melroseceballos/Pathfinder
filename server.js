@@ -3,7 +3,9 @@ const path = require('path');
 const express = require('express');
 const livereload = require("livereload");
 const connectLiveReload = require("connect-livereload");
-const destinationCtrl = require('./controllers/pathfinderRoutes')
+const pathFinderRoutes = require('./controllers/pathfinderRoutes')
+const bucketListRoute = require('./controllers/bucketList')
+// const bucketlistCtrl = require('./views/bucket')
 /* Require the db connection, models, and seed data
 --------------------------------------------------------------- */
 const db = require('./models');
@@ -21,17 +23,24 @@ liveReloadServer.server.once("connection", () => {
 // CONFIGURING APP
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
+
+
 /* Middleware (app.use)
 --------------------------------------------------------------- */
 app.use(express.static('public'))
 app.use(connectLiveReload());
+app.use('/pathfinderRoutes', pathFinderRoutes)
+app.use('/bucketlist', bucketListRoute)
+app.use(express.urlencoded({ extended: true })); //<-- BODY PARSER
+
+
 
 
 
 /* Mount routes
 --------------------------------------------------------------- */
 
-// HOME/INDEX PAGE
+// HOME ROUTE
 app.get('/', function (req, res) {
    db.Destinations.find({isFeatured: true})
    .then(destination => {
@@ -41,7 +50,19 @@ app.get('/', function (req, res) {
    })
 });
 
-// SEED 
+// ABOUT ROUTE works
+app.get('/about', function (req, res) {
+    res.render('about')
+});
+
+// CATCH ALL ROUTE works
+app.get('*', function (req, res) {
+    res.send('Error. Page Not Found')
+});
+
+
+
+// SEED DESTINATIONS
 app.get('/seed', function(req,res){
     db.Destinations.deleteMany({})
     .then(removedDestinations => {
@@ -54,7 +75,19 @@ app.get('/seed', function(req,res){
     })
 })
 
-app.use('/pathfinderRoutes', destinationCtrl)
+// SEED BUCKETLIST
+app.get('/seedBucket', function(req,res){
+    db.Bucket.deleteMany({})
+    .then(removedBuckets => {
+        console.log(`Removed ${removedBuckets.deletedCount} bucket lists`)
+    db.Bucket.insertMany(db.seedBucket)
+    .then(addedBuckets =>{
+        console.log(`Added ${addedBuckets.length} bucket lists to be inserted`)
+        res.json(addedBuckets)
+    })
+    })
+})
+
 /* Tell the app to listen on the specified port
 --------------------------------------------------------------- */
 app.listen(process.env.PORT, function () {

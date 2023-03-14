@@ -9,8 +9,10 @@ const mongodburi = process.env.MONGODBURI;
     console.log('MONGOOSE IS CONNECTED TO', mongodburi);
 } )().catch(err => console.log('MongoDB connection error:\n' + err))
 
-// ACCESING PET SCHEMA
+// ACCESING SCHEMA
 module.exports = {
     Destinations: require('./destinationSchema'),
-    seedDestination: require('./seed')
+    seedDestination: require('./seed'),
+    Bucket: require('./bucketSchema'),
+    seedBucket: require('./seedBucket')
 }

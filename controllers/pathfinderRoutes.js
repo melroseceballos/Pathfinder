@@ -16,7 +16,7 @@ const db = require('../models')
 --------------------------------------------------------------- */
 
 
-// Index/HOME Route 
+// Index
 router.get('/', function (req, res) { 
     db.Destinations.find({isFeatured: true})
     .then (destinations =>{
@@ -27,7 +27,6 @@ router.get('/', function (req, res) {
     .catch(() => res.send("UH-OH, PAGE NOT FOUND"))
         
 })
-
 
 // SHOW ROUTE
 router.get('/:id', function (req, res) { 
@@ -40,7 +39,7 @@ router.get('/:id', function (req, res) {
             .catch(() => res.send('UH-OH, PAGE NOT FOUND'))
         })
 
-      
+
 
 /* Export these routes so that they are accessible in `server.js`
 --------------------------------------------------------------- */

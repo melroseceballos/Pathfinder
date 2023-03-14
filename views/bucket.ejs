@@ -1,0 +1,43 @@
+    <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/header.ejs', {title: 'Path Finder'}) %>
+    <link rel="stylesheet" href="/styles/bucket.css">
+</head>
+
+<body>
+    <%- include('./partials/nav.ejs') %>
+
+    <main>
+        <section class="bucketList">
+            <h2>Here's your bucket list!</h2>
+        <section class="bucket-list">
+            <ul class="bucket-grid">
+                <% for (let Bucket of buckets) { %>
+                <li>
+                    <figure>
+                      <img src="<%= buckets.photo %>"></a>
+                    </figure>
+                    <figcaption>
+                        <div class="bucket-info">
+                            <h3><%= buckets.place %></h3>
+                            <p><%= buckets.date %></p>
+                            <p><%= buckets.reason%></p>
+                             <p><%= buckets.completed%></p>
+                            
+                        </div>
+                    </figcaption>
+                </li>
+                <% } %>
+            </ul>
+        </section>
+        <section class="addBucket">
+            <a href="/bucketlist/new"><button class="add" type="submit"> Add A Destination</button></a>
+        </section>
+    </main>
+
+    <%- include('./partials/footer.ejs') %>
+</body>
+
+</html>
