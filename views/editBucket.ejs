@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/header.ejs', {title: "Path Finder"}) %>
+    <link rel="stylesheet" href="/styles/editBucket.css">
+</head>
+
+<body>
+    <%- include('./partials/nav.ejs') %>
+
+    <h1>Edit Bucketlist</h1>
+
+    <form method="POST" action="/bucketlist/<%= Bucket._id %>?_method=PUT">
+        <!-- place input -->
+        <label for="place">Place:</label>
+        <input type="text" id="place" name="place" value="<%= Bucket.place %>" required>
+        <br>
+        <!-- date input -->
+        <label for="date">Date:</label>
+        <input type="text" id="date" name="date" value="<%= Bucket.date %>" required>
+        <br>
+        <!-- reason input -->
+        <label for="reason">Reason:</label>
+        <input type="text" id="reason" name="reason" value="<%= Bucket.reason %>">
+        <br>
+        <!-- completed input -->
+        <label for="completed">Completed:</label>
+        <select id="completed" name="completed" value="<%=Bucket.completed%>">
+            <option value="true">true</option>
+            <option value="false">false</option>
+        </select>
+        <br>
+        <!-- Photo input -->
+        <label for="photo">Photo (URL):</label>
+        <input type="text" id="photo" name="photo" value="<%= Bucket.photo %>" required>
+        <br>
+      
+        <input type="submit" value="Submit Changes">
+    </form>
+
+    <%- include('./partials/footer.ejs') %>
+</body>
+
+</html>

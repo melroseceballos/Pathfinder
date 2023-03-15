@@ -12,28 +12,34 @@
     <main>
         <section class="bucketList">
             <h2>Here's your bucket list!</h2>
+            <section class="addBucket">
+                <a href="/bucketlist/new"><button class="add" type="submit"> Add A Destination</button></a>
+            </section>
         <section class="bucket-list">
             <ul class="bucket-grid">
                 <% for (let Bucket of buckets) { %>
                 <li>
                     <figure>
-                      <img src="<%= buckets.photo %>"></a>
+                      <img src="<%= Bucket.photo %>"></a>
                     </figure>
                     <figcaption>
                         <div class="bucket-info">
-                            <h3><%= buckets.place %></h3>
-                            <p><%= buckets.date %></p>
-                            <p><%= buckets.reason%></p>
-                             <p><%= buckets.completed%></p>
-                            
+                            <h3><%= Bucket.place %></h3>
+                            <!-- <p><%= Bucket.date %></p> -->
+                            <p><%= Bucket.reason%></p>
+                            <section class="buttons">
+                            <!--DELETE-->
+                            <form method="POST" action="/bucketlist/<%= Bucket._id %>?_method=DELETE">
+                                <input class="btn" type="submit" value="Delete"/>
+                            </form>
+                            <!--EDIT-->
+                             <a href='/bucketList/<%=Bucket.id%>/edit'><button class='edit' type = 'submit'>Edit</button></a>
+                            </section>
                         </div>
                     </figcaption>
                 </li>
                 <% } %>
             </ul>
-        </section>
-        <section class="addBucket">
-            <a href="/bucketlist/new"><button class="add" type="submit"> Add A Destination</button></a>
         </section>
     </main>
 

@@ -1,7 +1,13 @@
-About section styles
+.buttons{
+    display: flex;
+    justify-content: space-between;
+   
+
+}
 .bucketList {
     background-color: #fff;
     padding: 2rem;
+    text-align: center;
 }
 
 .bucketList h2 {
@@ -10,7 +16,7 @@ About section styles
 }
 
 .bucketList p {
-    margin-bottom: 1rem;
+    margin-bottom: .5rem;
 } */
 
 /* Featured bucket lists section styles */
@@ -62,8 +68,14 @@ figcaption {
 
 .bucket-info h3 {
     font-size: calc(1em + 0.5vw);
+ 
 }
 
 .bucket-info p {
     font-size: calc(0.5rem + 0.5vw);
+    text-align: center;
+    margin-top: 1rem;
+}
+.edit{
+    margin-top: -20rem;
 }

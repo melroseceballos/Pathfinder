@@ -29,13 +29,9 @@ app.set('views', path.join(__dirname, 'views'));
 --------------------------------------------------------------- */
 app.use(express.static('public'))
 app.use(connectLiveReload());
+app.use(express.urlencoded({ extended: true }));
 app.use('/pathfinderRoutes', pathFinderRoutes)
 app.use('/bucketlist', bucketListRoute)
-app.use(express.urlencoded({ extended: true })); //<-- BODY PARSER
-
-
-
-
 
 /* Mount routes
 --------------------------------------------------------------- */

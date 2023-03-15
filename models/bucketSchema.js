@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 
 const bucketSchema = new mongoose.Schema({
-        place: {type: String, required: true},
-        date: {type: String, required: true},
-        reason: {type: String, required: true},
+        place: {type: String,},
+        date: {type: String,},
+        reason: {type: String,},
         completed: {type: Boolean},
         photo: {type: String}
 
