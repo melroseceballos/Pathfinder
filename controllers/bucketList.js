@@ -52,6 +52,7 @@ router.delete('/:id', (req, res) => {
         .then(Bucket => res.send('You\'ve deleted pet ' + Bucket._id))
 })
 
+// Create another route (router.get(/:id)) for user to click on bucketlist and see it indiv.
 
 /* Export these routes so that they are accessible in `server.js`
 --------------------------------------------------------------- */
