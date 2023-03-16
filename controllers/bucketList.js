@@ -3,7 +3,7 @@ const router = express.Router()
 const db = require('../models');
 
 
-// BUCKETLIST ROUTE
+// BUCKETLIST ROUTE (home)
 router.get('/', function (req, res) {
     db.Bucket.find({ completed: false })
         .then(buckets => {
@@ -12,7 +12,17 @@ router.get('/', function (req, res) {
             })
         })
 });
-
+// INDEX ROUTE (7th REST) // need to make more seed data with completed: true
+router.get('/completed', function (req, res) { 
+    db.Bucket.find({completed: true})
+    .then (buckets =>{
+            res.render('bucketIndex', {
+                Bucket: buckets
+            })
+    })
+    .catch(() => res.send("UH-OH, PAGE NOT FOUND"))
+        
+})
 
 // NEW ROUTE (1st RESTFUL) works
 router.get('/new', (req, res) => {
@@ -26,7 +36,7 @@ router.post('/', (req, res) => {
         .then(bucket => res.redirect('/bucketlist'))
 })
 
-// EDIT ROUTE work
+// EDIT ROUTE (3rd REST)
 router.get('/:id/edit', (req, res) => {
     db.Bucket.findById(req.params.id)
         .then(bucket => {
@@ -49,10 +59,20 @@ router.put('/:id', (req, res) => {
 // Destroy Route (5th REST) no work
 router.delete('/:id', (req, res) => {
     db.Bucket.findByIdAndRemove(req.params.id)
-        .then(Bucket => res.send('You\'ve deleted pet ' + Bucket._id))
+        .then(Bucket => res.redirect('/bucketlist'))
 })
 
-// Create another route (router.get(/:id)) for user to click on bucketlist and see it indiv.
+// SHOW ROUTE (6th REST)
+router.get('/:id', function (req,res){
+    db.Bucket.findById(req.params.id)
+    .then(buckets =>{
+        res.render('bucketShow',{
+            Bucket: buckets
+        })
+    })
+})
+
+
 
 /* Export these routes so that they are accessible in `server.js`
 --------------------------------------------------------------- */

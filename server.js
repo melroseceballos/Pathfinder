@@ -5,6 +5,7 @@ const livereload = require("livereload");
 const connectLiveReload = require("connect-livereload");
 const pathFinderRoutes = require('./controllers/pathfinderRoutes')
 const bucketListRoute = require('./controllers/bucketList')
+const methodOverride = require('method-override')
 // const bucketlistCtrl = require('./views/bucket')
 /* Require the db connection, models, and seed data
 --------------------------------------------------------------- */
@@ -30,8 +31,10 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static('public'))
 app.use(connectLiveReload());
 app.use(express.urlencoded({ extended: true }));
+app.use(methodOverride('_method'));
 app.use('/pathfinderRoutes', pathFinderRoutes)
 app.use('/bucketlist', bucketListRoute)
+
 
 /* Mount routes
 --------------------------------------------------------------- */

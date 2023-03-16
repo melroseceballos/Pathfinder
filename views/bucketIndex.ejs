@@ -3,7 +3,7 @@
 
 <head>
     <%- include('./partials/header.ejs', {title: 'Path Finder'}) %>
-    <link rel="stylesheet" href="/styles/destinationIndex.css">
+    <link rel="stylesheet" href="/styles/bucketIndex.css">
 </head>
 
 <body>
@@ -12,12 +12,16 @@
     <main>
         <section class="explore">
             <ul class="destination-grid">
-                <% for (let destinations of Destination) { %>
+                <% for (let buckets of Bucket) { %>
                 <li>
                     <figure>
-                        <img src="<%= destinations.photo %>">
+                        <img src="<%= buckets.photo %>">
                         <figcaption>
-                            <h4 class="name"><%= destinations.destination %></h4>
+                            <h4 class="place"><%= buckets.place %></h4>
+                            <h4 class="date"><%= buckets.date %></h4>
+                            <h4 class="reason"><%= buckets.reason %></h4>
+                            <h4 class="completed"><%= buckets.completed %></h4>
+
                         </figcaption>
                     </figure>
                 </li>

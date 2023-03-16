@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/header.ejs', {title: 'Path Finder'}) %>
+    <link rel="stylesheet" href="/styles/bucketShow.css">
+</head>
+
+<body>
+    <%- include('./partials/nav.ejs') %>
+
+    <div>
+       
+        <h2 class="destination-details"><%= Bucket.place %></h2>
+        <section>
+            <p><strong></strong> <%= Bucket.date %></p>
+            <p><strong>Reason:</strong> <%= Bucket.reason%></p>
+            <p><strong>Completed:</strong> <%= Bucket.completed %></p>
+            <img src="<%= Bucket.photo %>">
+            <section class="buttons">
+                <!--DELETE-->
+                <form method="POST" action="/bucketlist/<%=Bucket._id%>?_method=DELETE">
+                    <input class="btn" type="submit" value="Delete">
+                    </form>
+                <!--EDIT-->
+                 <a href='/bucketList/<%=Bucket.id%>/edit'><button class='edit' type = 'submit'>Edit</button></a> 
+                </section>
+        </section>
+    </div>
+
+    <%- include('./partials/footer.ejs') %>
+</body>
+
+</html>
