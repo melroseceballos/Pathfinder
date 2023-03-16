@@ -12,6 +12,17 @@ router.get('/', function (req, res) {
             })
         })
 });
+// NEW ROUTE (1st RESTFUL) works
+router.get('/new', (req, res) => {
+    res.render('bucketlist-form')
+})
+
+// CREATE ROUTE (2nd RESTFUL) works
+router.post('/', (req, res) => {
+    console.log(req.body)
+    db.Bucket.create(req.body)
+        .then(bucket => res.redirect('/bucketlist'))
+})
 // INDEX ROUTE (7th REST) // need to make more seed data with completed: true
 router.get('/completed', function (req, res) { 
     db.Bucket.find({completed: true})
@@ -24,17 +35,7 @@ router.get('/completed', function (req, res) {
         
 })
 
-// NEW ROUTE (1st RESTFUL) works
-router.get('/new', (req, res) => {
-    res.render('bucketlist-form')
-})
 
-// CREATE ROUTE (2nd RESTFUL) works
-router.post('/', (req, res) => {
-    console.log(req.body)
-    db.Bucket.create(req.body)
-        .then(bucket => res.redirect('/bucketlist'))
-})
 
 // EDIT ROUTE (3rd REST)
 router.get('/:id/edit', (req, res) => {
