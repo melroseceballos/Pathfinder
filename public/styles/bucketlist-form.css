@@ -1,25 +1,24 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f8f8;
-    color: #333;
-}
-
 h1 {
     text-align: center;
     margin-top: 20px;
-    color: black;
+    color: rgb(45, 45, 153);
+    letter-spacing: 0.1rem;
+    
+  
 }
 
 form {
     width: 60%;
     min-width: 300px;
     margin: 0 auto 2rem auto;
+    margin-top: 1rem;
 }
 
 label {
     display: inline-block;
     margin-bottom: 5px;
     font-weight: bold;
+    font-size: 17.4px
 }
 
 input[type="text"],
@@ -53,6 +52,18 @@ input[type="submit"]:hover {
     color: #333;
     border: 1px solid #333;
 }
-oh{
+#oh{
+    color: rgb(73, 153, 238);
+    letter-spacing: 0.2rem;
+
+}
+#formBtn{
+    margin-left: 20rem;
+    padding: 1rem;
+    font-size: 15px;
+    background-color: rgb(28, 156, 114);
     color: black;
+}
+#formBtn:hover{
+    color: white;
 }

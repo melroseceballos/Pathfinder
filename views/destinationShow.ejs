@@ -8,19 +8,58 @@
 
 <body>
     <%- include('./partials/nav.ejs') %>
-
-    <div>
-       
-        <h2 class="destination-details"><%= Destination.destination %></h2>
-        <section>
-            <p><strong>Date:</strong> <%= Destination.date %></p>
-            <p><strong>Hotels Cost:</strong> <%= Destination.hotels %></p>
-            <p><strong>Flight Cost:</strong> <%= Destination.flights%></p>
-            <p><strong>Activities Cost:</strong> <%= Destination.activities %></p>
-            <p><strong>Miscellaneous Cost:</strong> <%= Destination.misc %></p>
-            <img src="<%= Destination.photo %>">
-           
+        <h1 class="destination-details"><%= Destination.destination %></h1>
+        <h3 class="date"> <%= Destination.date %></h3>
+        <p class="average">Here are some average cost for this destination</p>
+        <section class="topTwo">
+            <!--HOTELS-->
+            <div class="hotelsDiv">
+             <div class="hotelsContent">
+             <div class="hotelsFront">
+             <p class="hotels">Hotels Cost</p>
+             </div>
+             <div class="hotelsBack">
+            <p>$<%= Destination.hotels %></p>
+            </div>
+            </div>
+            </div>
+            <!--FLIGHTS-->
+            <div class="flightsDiv">
+            <div class="flightsContent">
+            <div class="flightsFront">
+            <p><span>Flights Cost</span></p>
+            </div>
+            <div class="flightsBack">
+            <p>$<%=Destination.flights%></p>
+            </div>
+            </div>
+            </div>
         </section>
+        <section class="bottomTwo">
+                <!--ACTIVITIES-->
+            <div class="activitiesDiv">
+            <div class="activitiesContent">
+            <div class="activitiesFront">
+            <p>Activities Cost</p>
+            </div>
+            <div class="activitiesBack">
+            <p><br> $<%= Destination.activities %></p>
+            </div>
+            </div>
+            </div>
+            <!--MISCELLANEOUS-->
+            <div class="miscDiv">
+             <div class="miscContent">
+            <div class="miscFront">
+            <p>Miscellaneous Cost</p>
+            </div>
+            <div class="miscBack">
+            <p><br>$ <%= Destination.misc %></p>
+            </div>
+            </div>
+            </div>
+        </section>
+        
     </div>
 
     <%- include('./partials/footer.ejs') %>
