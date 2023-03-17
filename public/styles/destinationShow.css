@@ -334,3 +334,24 @@ strong {
     display: flex;
     justify-content: center
   }
+
+  /*******CONTENT INSIDE******/
+  .hotelsCost{
+    font-size: 55px;
+    padding-top: 4rem;
+  }
+  .flightCost{
+    font-size: 55px;
+    padding-top: 4rem;
+  }
+  .activitiesCost{
+    font-size: 55px;
+    padding-top: 4rem;
+  }
+  .miscCost{
+    font-size: 55px;
+    padding-top: 4rem;
+  }
+  .header{
+    position: fixed;
+  }

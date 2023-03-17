@@ -10,20 +10,19 @@
     <%- include('./partials/nav.ejs') %>
 
     <main>
-        <section class="explore">
-            <ul class="destination-grid">
-                <% for (let destinations of Destination) { %>
-                <li>
-                    <figure>
-                        <img src="<%= destinations.photo %>">
-                        <figcaption>
-                            <h4 class="name"><%= destinations.destination %></h4>
-                        </figcaption>
-                    </figure>
-                </li>
-                <% } %>
-            </ul>
-        </section>
+        <div class="destinationTitle">
+        <h1 class="popularTitle">Popular Destinations</h1>
+        <p class="estimate">As of 2022</p> 
+    </div>
+    <section class="explore">
+        <% for (let destinations of Destination) { %>
+           <figure>
+                <figcaption><%= destinations.destination %></figcaption>
+                    <img src="<%= destinations.photo %>">
+                </figure>
+            <% } %>
+        
+    </section>
     </main>
 
     <%- include('./partials/footer.ejs') %>

@@ -8,26 +8,22 @@
 
 <body>
     <%- include('./partials/nav.ejs') %>
-
-    <div>
-       
-        <h2 class="destination-details"><%= Bucket.place %></h2>
-        <section>
-            <p><strong></strong> <%= Bucket.date %></p>
-            <p><strong>Reason:</strong> <%= Bucket.reason%></p>
-            <p><strong>Completed:</strong> <%= Bucket.completed %></p>
-            <img src="<%= Bucket.photo %>">
-            <section class="buttons">
-                <!--DELETE-->
-                <form method="POST" action="/bucketlist/<%=Bucket._id%>?_method=DELETE">
-                    <input class="btn" type="submit" value="Delete">
-                    </form>
-                <!--EDIT-->
-                 <a href='/bucketList/<%=Bucket.id%>/edit'><button class='edit' type = 'submit'>Edit</button></a> 
-                </section>
-        </section>
+    <section class="divs">
+    <div class="infoDiv">
+    <h1 class="title"><%=Bucket.place%></h1>
+    <p class="information"><strong>Timeline:</strong> <%=Bucket.date%></p>
+    <p class="reason"><strong>Reason:</strong> <%=Bucket.reason%></p>
+     <!--DELETE-->
+     <form method="POST" action="/bucketlist/<%=Bucket._id%>?_method=DELETE">
+     <input class="button" type="submit" value="Delete" id="delete">
+     </form> 
+     <!--EDIT-->
+      <a href='/bucketList/<%=Bucket.id%>/edit'><button id="edit"class='button' type ='submit'>Edit</button></a>
     </div>
-
+    <div class="imgDiv">
+        <img src="<%=Bucket.photo%>">
+    </div>
+    </section>
     <%- include('./partials/footer.ejs') %>
 </body>
 
