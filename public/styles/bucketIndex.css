@@ -1,67 +1,40 @@
-main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+main{
+    background-color: rgb(72, 140, 143);
 }
-
-.explore {
-    margin-top: 50px;
-}
-
-.explore h1 {
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.explore ul {
-    list-style: none;
-    padding: 0;
-}
-
-.explore li {
-    margin-bottom: 40px;
-    border: 2px solid #ccc;
-    padding: 20px;
-    border-radius: 4px;
-    position: relative;
-    text-align: center;
-}
-
-.explore li img {
-    max-width: 100%;
-    height: auto;
-}
-
-figcaption {
-    text-align: left;
-}
-
-.explore li h4 {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-.explore li p {
-    font-size: 16px;
-    margin-bottom: 10px;
-}
-
-.explore li a {
-    background-color: #333;
-    color: #fff;
-    font-size: 18px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
+figcaption{
     position: absolute;
-    bottom: 20px;
-    right: 20px;
-    text-decoration: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 8rem;
+    opacity: 0;
+}
+figcaption:hover{
+    opacity: 1;
+    color: rgb(247, 247, 247);
+}
+img{
+    max-width: 65%;
+    height: 0 auto;
+    border: 20px double white;
+}
+figure{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 100%;
+    position: relative;
+    padding-top: 30px;
+    padding-bottom: 20px;
 }
 
-.explore li a:hover {
-    background-color: #555;
-}
-.name{
+.bucketHead{
+    color: black;
     text-align: center;
+    border: 2px solid white;
+    background-color: white;
+    letter-spacing: 4px;
 }

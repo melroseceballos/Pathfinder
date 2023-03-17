@@ -102,7 +102,7 @@ strong {
   
   /* Style the back side */
   .hotelsBack {
-    background-color: dodgerblue;
+    background-color: black;
     color: white;
     transform: rotateY(180deg);
   }
@@ -174,7 +174,7 @@ strong {
   
   /* Style the back side */
   .flightsBack {
-    background-color: dodgerblue;
+    background-color: black;
     color: white;
     transform: rotateY(180deg);
   }
@@ -252,7 +252,7 @@ strong {
   }
 
   .activitiesBack { 
-    background-color: dodgerblue;
+    background-color: black;
     color: white;
     transform: rotateY(180deg);
   }
@@ -312,7 +312,7 @@ strong {
   
   /* Style the back side */
   .miscBack {
-    background-color: dodgerblue;
+    background-color: black;
     color: white;
     transform: rotateY(180deg);
   }

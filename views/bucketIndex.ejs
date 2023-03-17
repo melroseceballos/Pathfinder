@@ -8,25 +8,16 @@
 
 <body>
     <%- include('./partials/nav.ejs') %>
-
     <main>
+        <h1 class="bucketHead">One Bucketlist At A Time!</h1>
         <section class="explore">
-            <ul class="destination-grid">
                 <% for (let buckets of Bucket) { %>
-                <li>
-                    <figure>
+               <figure>
+                    <figcaption><%= buckets.place %></figcaption>
                         <img src="<%= buckets.photo %>">
-                        <figcaption>
-                            <h4 class="place"><%= buckets.place %></h4>
-                            <h4 class="date"><%= buckets.date %></h4>
-                            <h4 class="reason"><%= buckets.reason %></h4>
-                            <h4 class="completed"><%= buckets.completed %></h4>
-
-                        </figcaption>
                     </figure>
-                </li>
                 <% } %>
-            </ul>
+            
         </section>
     </main>
 
