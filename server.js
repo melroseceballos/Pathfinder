@@ -56,7 +56,7 @@ app.get('/about', function (req, res) {
 
 // CATCH ALL ROUTE works
 app.get('*', function (req, res) {
-    res.send('Error. Page Not Found')
+    res.render('404')
 });
 
 

@@ -1,10 +1,3 @@
-/* 
----------------------------------------------------------------------------------------
-NOTE: Remember that all routes on this page are prefixed with `localhost:3000/pets`
----------------------------------------------------------------------------------------
-*/
-
-
 /* Require modules
 --------------------------------------------------------------- */
 const express = require('express')
@@ -14,8 +7,6 @@ const db = require('../models')
 
 /* Routes
 --------------------------------------------------------------- */
-
-
 // Index
 router.get('/', function (req, res) { 
     db.Destinations.find({isFeatured: true})
@@ -36,7 +27,7 @@ router.get('/:id', function (req, res) {
                 Destination: destinations
             })
             })
-            .catch(() => res.send('UH-OH, PAGE NOT FOUND'))
+            .catch(() => res.render('404'))
         })
 
 

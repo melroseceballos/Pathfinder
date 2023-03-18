@@ -1,3 +1,4 @@
+
 .vacations{
     text-align: center;
     margin-top: 2rem;
@@ -5,7 +6,9 @@
     color: rgb(20, 20, 84);
 }
 .featured-destinations {
-    background-color: #ffffff;
+    background-image: url("https://www.naplesillustrated.com/wp-content/uploads/sites/82/2016/05/dock-ani2.gif");
+    background-size: cover;
+    background-position: center;
     padding: 2rem;
 }
 
