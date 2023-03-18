@@ -20,10 +20,10 @@
 1. Download and install VS Code. [Click here for VS Code download](https://code.visualstudio.com/Download)
 2. Download and install Node. [Click here for Node download](https://nodejs.org/en/download)
 3. On your terminal, install the following:
-..* npm install expresse js mongoose dotenv livereload connect-livereload
-..* npm init -y
-..* npm install -g nodemon
-..* nodemon server.js -e css,ejs,js,json
+* npm install expresse js mongoose dotenv livereload connect-livereload
+* npm init -y
+* npm install -g nodemon
+* nodemon server.js -e css,ejs,js,json
 4. Fork and Clone repo
 5. Port is set to 3000. Visit local host at port desired
 
