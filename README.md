@@ -7,14 +7,14 @@
 [Here is the link to the Path Finder App](#)
 
 ## Technologies Used
-..* Node
-..* Express
-..* MongoDB
-..* GitHub
-..* HTML
-..* CSS
-..* EJS
-..* Visual Studio Code
+* Node
+* Express
+* MongoDB
+* GitHub
+* HTML
+* CSS
+* EJS
+* Visual Studio Code
 
 ## Installation Instructions
 1. Download and install VS Code. [Click here for VS Code download](https://code.visualstudio.com/Download)
