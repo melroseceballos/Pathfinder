@@ -4,7 +4,7 @@
 ### Path Finder is an Express app designed to offer travel convenience to its user. 
 
 ## GitHub Link
-[Here is the link to the Path Finder App](#)
+[Here is the link to the Path Finder App](https://pathfinder50.herokuapp.com/)
 
 ## Technologies Used
 * Node
